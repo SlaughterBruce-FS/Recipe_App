@@ -1,4 +1,4 @@
-![ScreemShot 1](image1.png)
+![ScreemShot 1](image1.jpg)
 
 ### ✅ Focus Areas
 
