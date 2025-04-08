@@ -29,9 +29,22 @@
 		07831BB12DA456C600EBAA5C /* Recipe_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Recipe_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		07831C5B2DA5A27D00EBAA5C /* Exceptions for "Recipe_App" folder in "Recipe_AppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TestData.swift,
+			);
+			target = 07831BA62DA456C600EBAA5C /* Recipe_AppTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		07831B992DA456C300EBAA5C /* Recipe_App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				07831C5B2DA5A27D00EBAA5C /* Exceptions for "Recipe_App" folder in "Recipe_AppTests" target */,
+			);
 			path = Recipe_App;
 			sourceTree = "<group>";
 		};

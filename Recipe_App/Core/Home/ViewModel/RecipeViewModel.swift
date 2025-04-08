@@ -13,9 +13,9 @@ class RecipeViewModel: ObservableObject {
     
     @Published var errorMessage: String?
     
-    private let service: RecipeService
+    private let service: RecipeServiceProtocol
     
-    init(service: RecipeService) {
+    init(service: RecipeServiceProtocol) {
         self.service = service
         Task { await fetchRecipes() }
     }

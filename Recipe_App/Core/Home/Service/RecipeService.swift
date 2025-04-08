@@ -7,7 +7,12 @@
 
 import Foundation
 
-class RecipeService {
+
+protocol RecipeServiceProtocol {
+    func fetchRecipes() async throws -> [Recipe]
+}
+
+class RecipeService: RecipeServiceProtocol {
     private let urlString = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json"
     
     func fetchRecipes() async throws -> [Recipe] {
@@ -18,7 +23,7 @@ class RecipeService {
         do{
             let (data, _) = try await URLSession.shared.data(from: url)
             let decoded = try JSONDecoder().decode(RecipeRes.self, from: data)
-            print("DEBUG: fetched from api")
+            print("DEBUG: data fetched from api")
 //            print("DEBUG: recipes \(decoded.recipes)")
             return decoded.recipes
         }catch {
