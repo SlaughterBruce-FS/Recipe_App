@@ -20,11 +20,19 @@ class RecipeService: RecipeServiceProtocol {
             throw RecipeAPIError.requestFailed(description: "Invalid URL")
         }
         
+        let cacheKey = url.absoluteString
+        
+        if let cachedRecipes = RecipeCache.shared.get(cacheKey) {
+            print("fetched from cache")
+            return cachedRecipes
+        }
+        
         do{
             let (data, _) = try await URLSession.shared.data(from: url)
             let decoded = try JSONDecoder().decode(RecipeRes.self, from: data)
             print("DEBUG: data fetched from api")
 //            print("DEBUG: recipes \(decoded.recipes)")
+            RecipeCache.shared.set(decoded.recipes, for: cacheKey)
             return decoded.recipes
         }catch {
             print("DEBUG: Error \(error.localizedDescription)")

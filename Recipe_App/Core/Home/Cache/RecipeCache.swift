@@ -14,13 +14,13 @@ struct RecipeCache {
     
     private init(){}
     
-    func set(_ recipes: Recipe, for key: String) {
+    func set(_ recipes: [Recipe], for key: String) {
         guard let data = try? JSONEncoder().encode(recipes) else { return}
         cache.setObject(data as NSData, forKey: key as NSString)
     }
     
-    func get(_ key: String) -> Recipe? {
+    func get(_ key: String) -> [Recipe]? {
         guard let data = cache.object(forKey: key as NSString) as? Data else { return nil}
-        return try? JSONDecoder().decode(Recipe.self, from: data)
+        return try? JSONDecoder().decode([Recipe].self, from: data)
     }
 }

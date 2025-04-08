@@ -11,7 +11,8 @@ import SwiftUI
 struct Recipe_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(service: MockRecipeService())
+            ContentView(service: RecipeService())
+//            ContentView(service: MockRecipeService())
         }
     }
 }
