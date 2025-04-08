@@ -51,5 +51,17 @@ class RecipeViewModelTest: XCTestCase {
 
     }
     
+    func testSuccessfulRecipeWithEmptyData() async {
+        let service = MockRecipeService()
+        service.apiURL = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes-empty.json")!
+        
+        let viewModel = RecipeViewModel(service: service)
+        
+        await viewModel.fetchRecipes()
+        
+        XCTAssertTrue(viewModel.recipes.isEmpty)
+
+    }
+    
     
 }
