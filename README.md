@@ -1,3 +1,5 @@
+![ScreemShot 1](image1.png)
+
 ### ✅ Focus Areas
 
 I prioritized building a clean, scalable architecture using the MVVVM pattern, along with ensuring a smooth user experience through efficient data loading and error handling. My main focus was:
